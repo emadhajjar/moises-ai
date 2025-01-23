@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Song": {
+      "properties": {
+        "albumTitle": {
+          "type": "string"
+        },
+        "albumYear": {
+          "type": "integer"
+        },
+        "artist": {
+          "type": "string"
+        },
+        "audio": {
+          "type": "string"
+        },
+        "cover": {
+          "type": "string"
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "poster": {
+          "type": "string"
+        },
+        "relatedSongs": {
+          "items": {
+            "$ref": "#/definitions/Song"
+          },
+          "type": "array"
+        },
+        "relatedTo": {
+          "items": {
+            "$ref": "#/definitions/Song"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "properties": {
+    "song": {
+      "$ref": "#/definitions/Song"
+    }
+  },
+  "type": "object"
+}

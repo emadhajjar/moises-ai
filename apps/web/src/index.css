@@ -1,0 +1,12 @@
+@import url('https://use.typekit.net/hbm0nej.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: black;
+    color: white;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "plugins": [
+      {
+        "stringify": "assert",
+        "transform": "@nestia/core/lib/transform",
+        "validate": "assert"
+      },
+      { "transform": "@nestia/sdk/lib/transform" }
+    ],
+    "sourceMap": true
+  },
+  "display": "Backend Library",
+  "extends": "./base.json"
+}

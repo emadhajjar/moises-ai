@@ -1,0 +1,48 @@
+{
+  "name": "moises-ai",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Music.AI Fullstack Test",
+  "repository": "git@github.com:emadhajjar/moises-ai.git",
+  "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky",
+    "format:lint": "eslint --fix",
+    "format:prettier": "prettier './**/*' --write --ignore-unknown",
+    "format": "concurrently -m 1 'yarn:format:*'",
+    "api": "yarn workspace @moises-ai/api",
+    "docker": "yarn workspace @moises-ai/docker",
+    "lint": "yarn workspace @moises-ai/lint",
+    "ts": "yarn workspace @moises-ai/ts",
+    "utils": "yarn workspace @moises-ai/utils",
+    "web": "yarn workspace @moises-ai/web",
+    "start:api": "yarn api start",
+    "start:web": "yarn web start",
+    "start": "concurrently 'yarn:start:*'",
+    "prod": "dotenv -e ./conf/prod.env yarn",
+    "stg": "dotenv -e ./conf/stg.env yarn"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@moises-ai/lint": "*",
+    "@moises-ai/ts": "*",
+    "concurrently": "^9.1.2",
+    "copyfiles": "^2.4.1",
+    "dotenv-cli": "^8.0.0",
+    "husky": "^9.1.7",
+    "lerna": "^8.1.9",
+    "rimraf": "^6.0.1",
+    "specifier-resolution-node": "^1.1.4"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "docker"
+  ],
+  "volta": {
+    "node": "22.9.0",
+    "yarn": "1.22.22"
+  }
+}
